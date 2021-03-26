@@ -137,6 +137,13 @@ class UserController extends Controller
         return view('user.fund.manual', $data);
     }
 
+    public function etherium_transfer()
+    {
+        $data['title']='Bank transfer';
+        $data['bank']=Adminbank::whereId(1)->first();
+        return view('user.fund.etherium', $data);
+    }
+
     public function userDataUpdate($id)
     {
         $data=Deposits::wheresecret($id)->first();

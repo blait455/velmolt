@@ -64,7 +64,7 @@
                                 </div>
                             </div>
 
-                            <h3 class="card-title">{{__('Update Manual Crypto Wallet Details')}}</h3>
+                            <h3 class="card-title">{{__('Update Manual Bitcoin Wallet Details')}}</h3>
                             <div class="form-group row">
                                 <label class="col-form-label col-lg-2">{{__('Wallet')}}</label>
                                 <div class="col-lg-10">
@@ -77,6 +77,21 @@
                                 <input type="text" name="wallet_id" class="form-control" value="{{$bank->wallet_id}}">
                                 </div>
                             </div>
+
+                            <h3 class="card-title">{{__('Update Manual Etherium Wallet Details')}}</h3>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Wallet')}}</label>
+                                <div class="col-lg-10">
+                                <input type="text" name="eth_vendor" class="form-control" value="{{$bank->eth_vendor}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Wallet ID')}}</label>
+                                <div class="col-lg-10">
+                                <input type="text" name="eth_id" class="form-control" value="{{$bank->eth_id}}">
+                                </div>
+                            </div>
+
                             <div class="text-right">
                                 <button type="submit" class="btn btn-success btn-sm">{{__('Save')}}</button>
                             </div>

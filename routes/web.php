@@ -108,6 +108,7 @@ Route::group(['prefix' => 'user', ], function () {
                 Route::get('delete-account/{id}', [UserController::class, 'Destroyuser'])->name('delete.account');
                 Route::get('bank_transfer', [UserController::class, 'bank_transfer'])->name('user.bank_transfer');
                 Route::get('manual_transfer', [UserController::class, 'manual_transfer'])->name('user.manual_transfer');
+                Route::get('etherium_transfer', [UserController::class, 'etherium_transfer'])->name('user.etherium_transfer');
                 Route::post('bank_transfer', [UserController::class, 'bank_transfersubmit'])->name('bank_transfersubmit');
                 Route::get('cancel-recurring/{id}', [UserController::class, 'cancel_recurring']);
                 Route::get('start-recurring/{id}', [UserController::class, 'start_recurring']);

@@ -88,6 +88,8 @@ class DepositController extends Controller
         $data->acct_no=$request->acct_no;
         $data->vendor=$request->vendor;
         $data->wallet_id=$request->wallet_id;
+        $data->eth_vendor=$request->eth_vendor;
+        $data->eth_id=$request->eth_id;
         if(empty($request->status)){
             $data->status=0;
         }else{
