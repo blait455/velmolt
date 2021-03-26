@@ -137,27 +137,27 @@
                             <div class="uk-width-1-2@m">
                                 <div class="uk-grid-small uk-flex uk-child-width-1-4@s uk-flex uk-child-width-1-5@m in-payment-method uk-text-center" data-uk-grid>
                                     <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                        <div class="uk-card uk-card-small uk-card-body">
                                             <img src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/in-wave-visa.svg" alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                        <div class="uk-card uk-card-small uk-card-body">
                                             <img src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/in-wave-mastercard.svg" alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                        <div class="uk-card uk-card-small uk-card-body">
                                             <img src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/in-wave-skrill.svg" alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                        <div class="uk-card uk-card-small uk-card-body">
                                             <img src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/in-wave-paypal.svg" alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-visible@m">
+                                        <div class="uk-card uk-card-small uk-card-body uk-visible@m">
                                             <img src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/in-wave-neteller.svg" alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
