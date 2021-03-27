@@ -147,43 +147,42 @@
 
         <div class="uk-section uk-section-muted uk-section-xsmall">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Quotes</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
                 {
-                    "symbols": [
-                    {
-                        "description": "Tesla",
-                        "proName": "NASDAQ:TSLA"
-                    },
-
-                    {
-                        "description": "Apple Inc",
-                        "proName": "NASDAQ:AAPL"
-                    },
-
-                    {
-                        "description": "Aramco",
-                        "proName": "SWB:HJ33"
-                    },
-                    {
-                        "description": "Upwork",
-                        "proName": "NASDAQ:UPWK"
-                    },
-                    {
-                        "description": "Dropbox",
-                        "proName": "NASDAQ:DBX"
-                    }
-                    ],
-                    "colorTheme": "light",
-                    "isTransparent": false,
-                    "showSymbolLogo": true,
-                    "locale": "en"
+                "symbols": [
+                {
+                    "description": "Tesla",
+                    "proName": "NASDAQ:TSLA"
+                },
+                {
+                    "description": "Apple inc",
+                    "proName": "NASDAQ:AAPL"
+                },
+                {
+                    "description": "Aramco",
+                    "proName": "EGX:ACGC"
+                },
+                {
+                    "description": "Upwork",
+                    "proName": "NASDAQ:UPWK"
+                },
+                {
+                    "description": "Dropbox",
+                    "proName": "NASDAQ:DBX"
                 }
-                </script>
-            </div>
-            <!-- TradingView Widget END -->
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "adaptive",
+                "locale": "en"
+                }
+            </script>
+        </div>
+  <!-- TradingView Widget END -->
         </div>
 
         <div class="uk-section uk-padding-large in-offset-bottom-70 in-wave-6">
