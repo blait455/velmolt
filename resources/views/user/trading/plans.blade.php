@@ -40,9 +40,9 @@
                           <div class="modal-body p-0">
                             <div class="card border-0 mb-0">
                               <div class="card-header bg-transparent pb-5">
-                                <div class="text-dark text-center mt-2 mb-3"><small>{{$val->name}}</small></div>
+                                {{-- <div class="text-dark text-center mt-2 mb-3"><small>{{$val->name}}</small></div> --}}
                                 <div class="btn-wrapper text-center">
-                                  <h1 class="text-uppercase text-future py-1 mb-0" id="profit{{$val->id}}">{{$val->name}}</h1>
+                                  {{-- <h1 class="text-uppercase text-future py-1 mb-0" id="profit{{$val->id}}">{{$val->name}}</h1> --}}
                                   @if($val->bonus!=null)
                                     <p class="text-sm text-future mb-0" id="bonus{{$val->id}}"></p>
                                   @endif
@@ -50,21 +50,37 @@
                                 </div>
                               </div>
                               <div class="card-body">
-                                <form role="form" action="{{route('user.check_plan')}}" method="post">
-                                @csrf
+
+                                {{-- <form role="form" action="{{route('user.check_plan')}}" method="post" oninput="x.value='$'+parseInt({{$val->compound}})*parseInt(b.value)/100">
+                                    <input class="form-control" type="range" id="a" value="50">
+                                    +<input class="form-control" type="number" id="b" name="amount" min="{{$val->min_deposit}}" max="{{$val->amount}}">
+                                    =<output class="form-control" name="x" for="a b">$</output>
+                                </form> --}}
+                                <form role="form" action="{{route('user.check_plan')}}" method="post" oninput="x.value='$'+parseInt({{$val->compound}})*parseInt(b.value)/100">
+                                    @csrf
                                   <input type="hidden" name="plan" value="{{$val->id}}">
                                   <div class="form-group mb-3">
                                     <div class="input-slider-container{{$val->id}}">
                                       <div class="row mt-3">
                                         <div class="col-12 text-left">
-                                          <input id="sliderValueInput{{$val->id}}" name="amount" type="hidden">
+                                          <input id="sliderValueInput{{$val->id}}" name="amount" type="hidden" class="form-control">
                                           <input id="duration{{$val->id}}" value="{{$val->compound}}" type="hidden">
                                           <input id="percent{{$val->id}}" value="{{$val->percent}}" type="hidden">
-                                          <span id="input-slider-value{{$val->id}}" class="range-slider-value view{{$val->id}}" data-range-value-low="{{$val->min_deposit}}"></span>
+                                          {{-- <span id="input-slider-value{{$val->id}}" class="range-slider-value view{{$val->id}}" data-range-value-low="{{$val->min_deposit}}"></span> --}}
                                         </div>
                                       </div>
-                                      <div id="input-slider{{$val->id}}" class="input-slider source{{$val->id}}" data-range-value-min="{{$val->min_deposit}}" data-range-value-max="{{$val->amount}}"></div>
+                                        {{-- <div id="input-slider{{$val->id}}" class="input-slider source{{$val->id}}" data-range-value-min="{{$val->min_deposit}}" data-range-value-max="{{$val->amount}}">
+                                        </div> --}}
                                     </div>
+                                  </div>
+                                  <div class="form-group mb-3">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Amount" type="number" id="b" name="amount" min="{{$val->min_deposit}}" max="{{$val->amount}}">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">ROI</span>
+                                            </div>
+                                            <output class="form-control" name="x" for="a b">$</output>
+                                        </div>
                                   </div>
                                   <div class="form-group mb-3">
                                     <div class="input-group">

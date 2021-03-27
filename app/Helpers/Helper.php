@@ -70,7 +70,7 @@ if (!function_exists('castrotime')) {
         $datetime1=Carbon::today();
         $datetime2=date_create($timestamp);
         $diff=date_diff($datetime1, $datetime2);
-        $timemsg=$datetime1->diffInDays($datetime2);    
+        $timemsg=$datetime1->diffInDays($datetime2);
         return $timemsg;
     }
 }
@@ -79,11 +79,11 @@ if (!function_exists('convertFloat')) {
     function convertFloat($floatAsString)
     {
         $norm = strval(floatval($floatAsString));
-    
+
         if (($e = strrchr($norm, 'E')) === false) {
             return $norm;
         }
-    
+
         return number_format($norm, -intval(substr($e, 1)));
     }
 }

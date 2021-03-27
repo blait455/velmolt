@@ -296,7 +296,9 @@
           	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
           		<tr>
           			<td class="logo" style="text-align: center;">
-			            <h1><a href="#">{!!$website!!}</a></h1>
+                        <img src="{!!$logo!!}" alt="" style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;">
+
+			            <h1 class="text"><a href="{{url('/')}}">{!!$website!!}</a></h1>
 			          </td>
           		</tr>
           	</table>
@@ -315,7 +317,7 @@
             	<tr>
 			          <td style="text-align: center;">
 			          	<div class="text-author">
-				          	<img src="{!!$logo!!}" alt="" style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;">
+				          	{{-- <img src="{!!$logo!!}" alt="" style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;"> --}}
 				          	<span class="position">{!!$content!!}</span>
 			           	</div>
 			          </td>
@@ -351,9 +353,9 @@
                       	<h3 class="heading">Useful Links</h3>
                       	<ul>
 							<li><a href="{{url('/')}}">Home</a></li>
-							<li><a href="{{route('faq')}}">Faq</a></li>
+							<li><a href="{{route('plans')}}">Invest</a></li>
 							<li><a href="{{route('contact')}}">Contact</a></li>
-							<li><a href="{{route('privacy')}}">Privacy policy</a></li>
+							{{-- <li><a href="{{route('privacy')}}">Privacy policy</a></li> --}}
 						</ul>
                       </td>
                     </tr>
