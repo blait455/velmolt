@@ -151,13 +151,13 @@ class DepositController extends Controller
             send_email(
                 $user->email,
                 $user->username,
-                'Bank Deposit Request has been approved',
-                'Bank Deposit of '.$currency->symbol.$data->amount.'. has been approved<br>Thanks for working with us.'
+                'Manual Deposit Request has been approved',
+                'Manual Deposit of '.$currency->symbol.$data->amount.'. has been approved<br>Thanks for working with us.'
             );
         }
             $audit['user_id']=$data->user_id;
             $audit['trx']=str_random(16);
-            $audit['log']='Bank Deposit request Approved '.$data->trx;
+            $audit['log']='Manual Deposit request Approved '.$data->trx;
             Audit::create($audit);
         if ($res) {
             return back()->with('success', 'Request was Successfully approved!');
@@ -178,13 +178,13 @@ class DepositController extends Controller
             send_email(
                 $user->email,
                 $user->username,
-                'Bank Deposit Request has been declined',
-                'Bank Deposit of '.$currency->symbol.$data->amount.'. has been declined<br>Thanks for working with us.'
+                'Manual Deposit Request has been declined',
+                'Manual Deposit of '.$currency->symbol.$data->amount.'. has been declined<br>Thanks for working with us.'
             );
         }
         $audit['user_id']=$data->user_id;
         $audit['trx']=str_random(16);
-        $audit['log']='Bank Deposit request Declined '.$data->trx;
+        $audit['log']='Manual Deposit request Declined '.$data->trx;
         Audit::create($audit);
         if ($res) {
             return back()->with('success', 'Request was Successfully declined!');

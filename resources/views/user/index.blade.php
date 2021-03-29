@@ -39,7 +39,7 @@
                   </div>
                 </div>
               </div>
-            </div>             
+            </div>
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
@@ -51,7 +51,7 @@
                   </div>
                 </div>
               </div>
-            </div>           
+            </div>
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
@@ -63,7 +63,7 @@
                   </div>
                 </div>
               </div>
-            </div>           
+            </div>
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col">
                   <h3 class="mb-0 h4">{{__('Two Factor Authentication')}}</h3>
-                  
+
                     @if($user->fa_status==0)
                     <span class="badge badge-pill badge-danger">
                     {{__('Disabled')}}
@@ -141,19 +141,19 @@
                   <div class="modal-dialog modal- modal-dialog-centered modal-md" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
-                        <div class="text-left mt-2 mb-3 text-dark text-sm">Don't let your money sit there, upgrade your account & start receiving bonuses</div> 
-                        <div class="text-left mt-2 mb-3 text-dark text-sm">Upgrade fee costs {{$currency->symbol.$set->upgrade_fee}}</div> 
+                        <div class="text-left mt-2 mb-3 text-dark text-sm">Don't let your money sit there, upgrade your account & start receiving bonuses</div>
+                        <div class="text-left mt-2 mb-3 text-dark text-sm">Upgrade fee costs {{$currency->symbol.$set->upgrade_fee}}</div>
                         <div class="text-left">
                           <a href="{{route('user.upgrade')}}" class="btn btn-success btn-block">Upgrade</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
-            @endif 
-          @endif 
+            @endif
+          @endif
       <div class="card">
         <!-- Card header -->
         <div class="card-header">
@@ -176,6 +176,7 @@
                 <div class="col">
                 @php $pp=$val->compound*$val->amount/100; @endphp
                   <span class="card-text text-sm text-dark">#{{$val->trx}} @ {{$val->plan->name}} [{{number_format($val->profit)}}/{{number_format($pp).$currency->name}}]</span>
+                  {{-- <span class="card-text text-sm text-dark">#{{$val->trx}} @  [{{number_format($val->profit)}}/{{number_format($pp).$currency->name}}]</span> --}}
                   <div class="progress progress-xs mb-0">
                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{($val->profit*100)/$pp}}%;background-color:{{$set->s_c}};"></div>
                   </div>
@@ -186,6 +187,6 @@
           </ul>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 @stop

@@ -41,12 +41,20 @@
                     <div class="col-6">
                       <p class="text-sm text-gray mb-0 text-uppercase">{{$val->plan->name}} {{__('Plan')}} {{$val->duration}}(s)</p>
                       <p class="text-sm text-dark mb-0 text-uppercase">{{date("M j, Y", strtotime($val->date))}} - {{date("M j, Y", strtotime($val->end_date))}}</p>
+                      @if ($val->plan->name != 'Tesla' && $val->plan->name != 'Arab Aramco' && $val->plan->name != 'Apple Inc' && $val->plan->name != 'Upwork')
                       <p class="text-sm text-dark mb-2 text-uppercase">{{__('Invested')}} {{$val->amount.$currency->name}} @ {{$val->plan->percent}}% {{__('Daily')}}</p>
+                      @else
+                      <p class="text-sm text-dark mb-2 text-uppercase">{{__('Bought')}} {{$val->amount}} shares @ ${{$val->plan->percent}} {{__('PPs')}}</p>
+                      @endif
                       {{-- <h4 class="mb-1 h2" style="color: {{$set->s_c}};">{{$val->profit.$currency->name}}</h4> --}}
                       <h5 class="h4 mb-0 text-dark text-uppercase">{{__('Current Progress')}}</h5>
                     </div>
                     <div class="col-6 text-right">
-                      <h4 class="mb-1 h2  er" style="color: {{$set->s_c}};">GOAL(ROI) {{$goal.$currency->name}}</h4>
+                        @if ($val->plan->name != 'Tesla' && $val->plan->name != 'Arab Aramco' && $val->plan->name != 'Apple Inc' && $val->plan->name != 'Upwork')
+                            <h4 class="mb-1 h2  er" style="color: {{$set->s_c}};"> GOAL(ROI) {{$goal.$currency->name}}</h4>
+                        @else
+                            <h4 class="mb-1 h2  er" style="color: {{$set->s_c}};"><a href="https://csimarket.com/stocks/index.php" class="btn bg-progress">ROI</a></h4>
+                        @endif
                       {{-- <p class="text-sm text-dark mb-0 text-uppercase">{{__('ROI')}}: {{$profit.$currency->name}}</p> --}}
                       @if($val->plan->bonus!=null)<p class="text-sm text-dark mb-0 text-uppercase">{{__('Bonus')}} - {{$bonus.$currency->name}}</p>@endif
                     </div>
@@ -60,16 +68,18 @@
                   </div>
                   <div class="row align-items-center mb-1">
                     @if($val->status!=2)
-                      <div class="col-5">
-                        @if($val->recurring==1)
-                          @if($val->c_r==1)
-                          <a href="{{url('/')}}/user/cancel-recurring/{{$val->id}}" class="btn btn-sm btn-danger">{{__('Cancel Recurring')}}</a>
-                          @elseif($val->c_r==0)
-                          <a href="{{url('/')}}/user/start-recurring/{{$val->id}}" class="btn btn-sm btn-success">{{__('Start Recurring')}}</a>
-                          @endif
+                        @if ($val->plan->name != 'Tesla' && $val->plan->name != 'Arab Aramco' && $val->plan->name != 'Apple Inc' && $val->plan->name != 'Upwork')
+                            <div class="col-5">
+                                @if($val->recurring==1)
+                                @if($val->c_r==1)
+                                <a href="{{url('/')}}/user/cancel-recurring/{{$val->id}}" class="btn btn-sm btn-danger">{{__('Cancel Recurring')}}</a>
+                                @elseif($val->c_r==0)
+                                <a href="{{url('/')}}/user/start-recurring/{{$val->id}}" class="btn btn-sm btn-success">{{__('Start Recurring')}}</a>
+                                @endif
+                                @endif
+                                <a href="#" data-toggle="modal" data-target="#share{{$val->id}}" title="Share trading activity" class="btn btn-sm btn-neutral">{{__('Share')}}</a>
+                            </div>
                         @endif
-                        <a href="#" data-toggle="modal" data-target="#share{{$val->id}}" title="Share trading activity" class="btn btn-sm btn-neutral">{{__('Share')}}</a>
-                      </div>
                     @endif
                     @if($val->status!=2)
                       <div class="col-7 text-right">

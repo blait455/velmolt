@@ -25,13 +25,13 @@
                                     <div class="row">
                                         <div class="col-6">
                                         <input type="text" name="first_name" class="form-control" placeholder="{{__('First Name')}}" value="{{$client->first_name}}">
-                                        </div>      
+                                        </div>
                                         <div class="col-6">
                                         <input type="text" name="last_name" class="form-control" placeholder="{{__('Last Name')}}" value="{{$client->last_name}}">
                                         </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                             <div class="form-group row">
                                 <label class="col-form-label col-lg-2">{{__('Email')}}:</label>
                                 <div class="col-lg-10">
@@ -43,7 +43,7 @@
                                 <div class="col-lg-10">
                                     <input type="text" name="mobile" class="form-control" value="{{$client->phone}}">
                                 </div>
-                            </div>                                              
+                            </div>
                             <div class="form-group row">
                                 <label class="col-form-label col-lg-2">{{__('Address')}}:</label>
                                 <div class="col-lg-10">
@@ -60,7 +60,51 @@
                                         <input type="number" name="balance"step="any" max-length="10" value="{{convertFloat($client->balance)}}" class="form-control">
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Profit:')}}</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text">{{$currency->symbol}}</span>
+                                        </span>
+                                        <input type="number" name="profit"step="any" max-length="10" value="{{convertFloat($client->profit)}}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Refferal bonus:')}}</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text">{{$currency->symbol}}</span>
+                                        </span>
+                                        <input type="number" name="ref_bonus"step="any" max-length="10" value="{{convertFloat($client->ref_bonus)}}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Total Profit:')}}</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text">{{$currency->symbol}}</span>
+                                        </span>
+                                        <input type="number" name="total_profit"step="any" max-length="10" value="{{convertFloat($client->total_profit)}}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2">{{__('Total bonus:')}}</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text">{{$currency->symbol}}</span>
+                                        </span>
+                                        <input type="number" name="trade_bonus"step="any" max-length="10" value="{{convertFloat($client->trade_bonus)}}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label class="col-form-label col-lg-2">{{__('Status')}}<span class="text-danger">*</span></label>
                                 <div class="col-lg-10">
@@ -71,9 +115,9 @@
                                             <input type="checkbox" name="email_verify"id=" customCheckLogin5"  class="custom-control-input" value="1">
                                         @endif
                                         <label class="custom-control-label" for=" customCheckLogin5">
-                                        <span class="text-muted">{{__('Email verification')}}</span>     
+                                        <span class="text-muted">{{__('Email verification')}}</span>
                                         </label>
-                                    </div>                                     
+                                    </div>
                                     <div class="custom-control custom-control-alternative custom-checkbox">
                                         @if($client->fa_status==1)
                                             <input type="checkbox" name="fa_status" id=" customCheckLogin6" class="custom-control-input" value="1" checked>
@@ -81,9 +125,9 @@
                                             <input type="checkbox" name="fa_status" id=" customCheckLogin6"  class="custom-control-input" value="1">
                                         @endif
                                         <label class="custom-control-label" for=" customCheckLogin6">
-                                        <span class="text-muted">{{__('2fa security')}}</span>     
+                                        <span class="text-muted">{{__('2fa security')}}</span>
                                         </label>
-                                    </div>    
+                                    </div>
                                     <div class="custom-control custom-control-alternative custom-checkbox">
                                         @if($client->kyc_status==1)
                                             <input type="checkbox" name="kyc_status" id=" customCheckLogin7" class="custom-control-input" value="1" checked>
@@ -91,11 +135,11 @@
                                             <input type="checkbox" name="kyc_status" id=" customCheckLogin7"  class="custom-control-input" value="1">
                                         @endif
                                         <label class="custom-control-label" for=" customCheckLogin7">
-                                        <span class="text-muted">{{__('Kyc')}}</span>     
+                                        <span class="text-muted">{{__('Kyc')}}</span>
                                         </label>
-                                    </div>                                                           
+                                    </div>
                                 </div>
-                            </div>                
+                            </div>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-success btn-sm">{{__('Save')}}</button>
                             </div>
@@ -124,7 +168,7 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 @if($set->kyc==1)
                 <div class="card">
                     <div class="card-header header-elements-inline">
@@ -149,8 +193,8 @@
                                         @else
                                         {{__('No file')}}
                                         @endif
-                                    </td>          
-                                </tr> 
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

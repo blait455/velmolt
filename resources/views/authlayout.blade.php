@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#313131" />
     <!-- Site Properties -->
-    <title>Sign in - Wave HTML5 Template</title>
+    <title>{{ $title }} | {{$set->site_name}}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->
@@ -31,34 +31,35 @@
     <!-- preloader end -->
     <main>
         <!-- section content begin -->
-        <div class="uk-section uk-padding-remove-vertical">
-            <div class="uk-container uk-container-expand">
-                <div class="uk-grid" data-uk-height-viewport="expand: true">
-                    <div class="uk-width-3-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge" style="background-image: url({{url('/')}}/asset/front/img/login.png);">
-                    </div>
-                    <div class="uk-width-expand@m uk-flex uk-flex-middle">
-                        <div class="uk-grid uk-flex-center">
-                            <div class="uk-width-3-5@m">
-                                <div class="in-padding-horizontal@s">
-                                    <!-- module logo begin -->
-                                    <a class="uk-logo" href="{{route('home')}}">
-                                        <img class="uk-margin-small-right in-offset-top-10" src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/cw-l.png" alt="wave" width="350" height="50" data-uk-img>
-                                    </a>
-                                    @yield('content')
+            <div class="uk-section uk-padding-remove-vertical">
+                <div class="uk-container uk-container-expand">
+                    <div class="uk-grid" data-uk-height-viewport="expand: true">
+                        <div class="uk-width-3-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge" style="background-image: url({{url('/')}}/asset/front/img/login.png);">
+                        </div>
+                        <div class="uk-width-expand@m uk-flex uk-flex-middle">
+                            <div class="uk-grid uk-flex-center">
+                                <div class="uk-width-3-5@m">
+                                    <div class="in-padding-horizontal@s">
+                                        <!-- module logo begin -->
+                                        <a class="uk-logo" href="{{route('home')}}">
+                                            <img class="uk-margin-small-right in-offset-top-10" src="{{url('/')}}/asset/front/img/in-lazy.gif" data-src="{{url('/')}}/asset/front/img/cw-l.png" alt="wave" width="350" height="50" data-uk-img>
+                                        </a>
+                                        @yield('content')
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         <!-- section content end -->
     </main>
     <!-- Javascript -->
     <script src="{{url('/')}}/asset/front/js/vendors/uikit.min.js"></script>
     <script src="{{url('/')}}/asset/front/js/vendors/indonez.min.js"></script>
-    <script src="{{url('/')}}/asset/js/toast.js"></script>
 
+    <script src="{{url('/')}}/asset/dashboard/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="{{url('/')}}/asset/js/toast.js"></script>
 </body>
 
 </html>

@@ -207,6 +207,7 @@
     <!-- Javascript -->
     <script src="{{url('/')}}/asset/front/js/vendors/uikit.min.js"></script>
     <script src="{{url('/')}}/asset/front/js/vendors/indonez.min.js"></script>
+    <script src="{{url('/')}}/asset/vendor/jquery/jquery.min.js"></script>
     <script src="{{url('/')}}/asset/js/toast.js"></script>
     @yield('script')
     @if (session('success'))

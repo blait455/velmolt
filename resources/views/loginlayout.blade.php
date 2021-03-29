@@ -21,13 +21,13 @@
         <link rel="stylesheet" href="{{url('/')}}/asset/dashboard/css/argon.css?v=1.1.0" type="text/css">
         <link rel="stylesheet" href="{{url('/')}}/asset/css/toast.css" type="text/css">
         <link href="{{url('/')}}/asset/fonts/fontawesome/css/all.css" rel="stylesheet" type="text/css">
-         @yield('css')
+        @yield('css')
     </head>
-<!-- header begin-->
+    <!-- header begin-->
   <body style="background-color:{{$set->m_c}};">
     <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-dark">
       <div class="container">
-      @if (Auth::guard('user')->check()) 
+      @if (Auth::guard('user')->check())
         <a class="navbar-brand text-dark" href="{{route('user.dashboard')}}">
           <span><i class="fal fa-arrow-left"></i>  {{__('Back')}}</span>
         </a>
@@ -69,7 +69,7 @@
 {!!$set->livechat!!}
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="{{url('/')}}/asset/dashboard/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="{{url('/')}}/asset/dashboard/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{url('/')}}/asset/dashboard/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{url('/')}}/asset/dashboard/vendor/js-cookie/js.cookie.js"></script>
     <script src="{{url('/')}}/asset/dashboard/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
@@ -104,7 +104,7 @@
     <script>
       "use strict";
       toastr.success("{{ session('success') }}");
-    </script>    
+    </script>
 @endif
 
 @if (session('alert'))
