@@ -54,7 +54,7 @@
                                     @if($val->bonus!=null)
                                         <p class="text-sm text-future mb-0" id="bonus{{$val->id}}"></p>
                                     @endif
-                                    @if ($val->name != 'Tesla')
+                                    @if ($val->name != 'Tesla' && $val->name!= 'Arab Aramco' && $val->name!= 'Apple Inc' && $val->name!= 'Upwork')
                                         <p class="text-sm text-future mb-0">End by {{date("Y/m/d h:i:A", strtotime($xndate))}}</p>
                                     @endif
                                     </div>
@@ -82,12 +82,12 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <div class="input-group">
-                                            @if ($val->name != 'Tesla')
+                                            @if ($val->name != 'Tesla' && $val->name!= 'Arab Aramco' && $val->name!= 'Apple Inc' && $val->name!= 'Upwork')
                                                 <input class="form-control" placeholder="Amount" type="number" id="b" name="amount" min="{{$val->min_deposit}}" max="{{$val->amount}}">
                                             @else
                                                 <input class="form-control" placeholder="Number of shares" type="number" id="b" name="amount" min="{{$val->min_deposit}}" max="{{$val->amount}}">
                                             @endif
-                                            @if ($val->name != 'Tesla')
+                                            @if ($val->name != 'Tesla' && $val->name!= 'Arab Aramco' && $val->name!= 'Apple Inc' && $val->name!= 'Upwork')
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">ROI</span>
                                                 </div>
@@ -95,7 +95,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    @if ($val->name != 'Tesla')
+                                    @if ($val->name != 'Tesla' && $val->name!= 'Arab Aramco' && $val->name!= 'Apple Inc' && $val->name!= 'Upwork')
                                         <div class="form-group mb-3">
                                             <div class="input-group">
                                             <div class="input-group-prepend">
