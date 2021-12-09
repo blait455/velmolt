@@ -62,10 +62,10 @@
                   @foreach($referral as $k=>$val)
                     <tr>
                       <td class="table-user">
-                        <img src="{{url('/')}}/asset/profile/{{$val->user['image']}}" class="avatar rounded-circle mr-3">
+                        <img src="{{url('/')}}/asset/profile/{{ isset($val->user['image']) }}" class="avatar rounded-circle mr-3">
                       </td>                      
                       <td>
-                        {{$val->user['first_name']}} {{$val->user['last_name']}}
+                        {{ isset($val->user['first_name']) }} {{ isset($val->user['last_name']) }}
                       </td>
                     </tr>
                   @endforeach
